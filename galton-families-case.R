@@ -12,3 +12,6 @@ galton_heights %>% summarise(r=cor(father, son))
 
 lm(son~father, data=galton_heights)
 
+fit <- galton_heights %>% lm(son ~ father, data = .) 
+Y_hat <- predict(fit, se.fit = TRUE)
+Y_hat
